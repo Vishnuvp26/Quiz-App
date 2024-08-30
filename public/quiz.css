@@ -1,0 +1,134 @@
+/* Apply Poppins font to the entire document */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Dark gradient background */
+    color: #fff;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: transparent; /* Transparent container */
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 24px; /* Adjusting the font size for the header */
+}
+
+p {
+    font-weight: 400;
+    font-size: 20px; /* Adjusting the font size for questions */
+    margin-bottom: 20px;
+}
+
+.form-check-label {
+    font-size: 18px; /* Font size for options */
+    padding-left: 35px;
+    position: relative;
+    display: block;
+    cursor: pointer;
+    line-height: 1.5em;
+}
+
+.form-check-input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.form-check-input:checked ~ .form-check-label::before {
+    background-color: #007bff;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px #0056b3;
+}
+
+.form-check-input:checked ~ .form-check-label::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: 5px;
+    width: 8px;
+    height: 16px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.form-check-label::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ddd;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.btn {
+    font-weight: 600;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    transition: 0.3s;
+    width: 100%;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn:focus {
+    box-shadow: 0 0 5px 2px rgba(0, 123, 255, 0.5);
+}
+
+/* Neon effect for buttons */
+.neon-button {
+    position: relative;
+    overflow: hidden;
+}
+
+.neon-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: neon-effect 1.5s infinite alternate;
+}
+
+@keyframes neon-effect {
+    from {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+    }
+}

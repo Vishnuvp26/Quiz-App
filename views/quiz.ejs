@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <link rel="shortcut icon" href="/fav.png" type="image/png">
+
+</head>
+<body class="bg-gradient-to-br from-gray-800 via-blue-900 to-gray-900 text-white flex items-center justify-center min-h-screen font-poppins">
+
+    <div class="container mx-auto max-w-md p-6 bg-transparent rounded-lg shadow-lg text-center">
+        <h1 class="text-2xl font-semibold mb-6">Quiz</h1>
+        <p class="text-lg mb-4">Question <%= currentQuestion + 1 %> out of <%= totalQuestions %></p>
+        <form action="/submit-answer" method="POST">
+            <input type="hidden" name="currentQuestion" value="<%= currentQuestion %>">
+            <input type="hidden" name="score" value="<%= score %>">
+            <div class="mb-4">
+                <p class="text-lg mb-4"><%= questions[currentQuestion].question %></p>
+                <% questions[currentQuestion].options.forEach(option => { %>
+                    <div class="flex items-center mb-2">
+                        <input id="<%= option %>" type="radio" name="answer" value="<%= option %>" required class="form-radio h-5 w-5 text-blue-600 transition duration-150 ease-in-out">
+                        <label for="<%= option %>" class="ml-3 text-lg"><%= option %></label>
+                    </div>
+                <% }) %>
+            </div>
+            <button type="button" class="w-full py-3 mb-3 text-lg font-semibold text-gray-800 bg-gray-400 rounded-full shadow-lg hover:bg-gray-500 transition duration-300" onclick="window.history.back()">Previous</button>
+            <button type="submit" class="w-full py-3 text-lg font-semibold text-white bg-blue-600 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">Submit</button>
+            <div class="mt-4">
+                <button type="button" class="w-full py-3 text-lg font-semibold text-white bg-red-600 rounded-full shadow-lg hover:bg-red-700 transition duration-300" onclick="window.location.href='/'">Exit Quiz</button>
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Result</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/fav.png" type="image/png">
+</head>
+<body class="bg-gradient-to-b from-purple-800 via-indigo-700 to-blue-600 min-h-screen flex items-center justify-center font-sans">
+
+    <div class="bg-white rounded-lg shadow-lg p-8 max-w-lg text-center">
+        <h1 class="text-4xl font-bold text-gray-800 mb-6">Quiz Completed!</h1>
+        <p class="text-2xl text-gray-700 mb-8">Your Score: <span class="text-blue-600 font-semibold"><%= score %></span> out of <span class="text-blue-600 font-semibold"><%= totalQuestions %></span></p>
+        <a href="/" class="inline-block bg-blue-600 text-white py-3 px-6 rounded-full shadow-md hover:bg-blue-700 transition duration-300">Go Home</a>
+    </div>
+
+</body>
+</html>
